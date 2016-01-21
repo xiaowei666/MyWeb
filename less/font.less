@@ -1,0 +1,71 @@
+@font-face {font-family: 'iconfont';
+  src: url('../font/iconfont.eot'); /* IE9*/
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+@name1:xl;
+@name2:home;
+@name3:sl;
+@name4:fd;
+@name5:lj;
+@name6:wujiao;
+@name7:botton;
+@name8:guanbi;
+
+@icon1:\e604;
+@icon2:\e66a;
+@icon3:\e600;
+@icon4:\e68c;
+@icon5:\e69e;
+@icon6:\e635;
+@icon7:\e605;
+@icon8:\e60a;
+
+
+.for(@i:1) when (@i<9){
+  @n:'name@{i}';
+  @n1:@@n;
+
+  @c:'icon@{i}';
+  @c1:@@c;
+
+  *[data-role='@{n1}']:before{
+    font-family: 'iconfont';
+      content:'@{c1}';
+  }
+
+  *[data-role='@{n1}'][icon-pos='left']:before{
+    font-family: 'iconfont';
+    content:'@{c1}';
+  }
+
+  *[data-role='@{n1}'][icon-pos='right']:before{
+    font-family: 'iconfont';
+    content:'';
+  }
+  *[data-role='@{n1}'][icon-pos='right']:after{
+    font-family: 'iconfont';
+    content:'@{c1}';
+  }
+
+  *[data-role='@{n1}'][icon-pos='top']:before{
+    display:block;
+    font-family: 'iconfont';
+    content:'@{c1}';
+  }
+
+  *[data-role='@{n1}'][icon-pos='bottom']:before{
+    font-family: 'iconfont';
+    content:'';
+  }
+  *[data-role='@{n1}'][icon-pos='bottom']:after{
+    display:block;
+    font-family: 'iconfont';
+    content:'@{c1}';
+  }
+  .for(@i+1);
+}
+.for();
