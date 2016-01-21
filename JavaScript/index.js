@@ -169,8 +169,7 @@ $(function(){
     //滚动检测
     setInterval(function(){
         for(var i = 0 ; i < $(".kaiji").length ; i++ ){
-            var wit = $(window).scrollTop() , tht = $( $('.kaiji')[i] ).offset().top，tat = $( $('.kaiji')[i+1] ).offset().top ;
-
+            var wit = $(window).scrollTop() , tht = $( $('.kaiji')[i] ).offset().top,tat = $( $('.kaiji')[i+1] ).offset().top ;
             if(wit >= tht && wit <= tat){
                 $(".xiba").removeClass("back");
                 $($(".xiba")[i+1]).addClass("back");
